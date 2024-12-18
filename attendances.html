@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body class="min-vh-100" style="background-color: #FFFDD0;">
+    <img src="assets/Logo.png" alt="GCTU Logo" class="position-absolute top-0 end-0 p-3" style="max-height: 100px;">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Attendance Records</h1>
+        <table class="table table-bordered table-striped shadow" id="attendanceTable">
+            <thead class="table-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Student ID</th>
+                    <th>Course</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody id="attendanceTableBody">
+                <!-- Records will be dynamically loaded here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        // Fetch attendance records from localStorage
+        const name = localStorage.getItem("name");
+        const id = localStorage.getItem("id");
+        const course = localStorage.getItem("course");
+        const date = localStorage.getItem("date");
+        const time = localStorage.getItem("time");
+            
+        // Insert data into the table
+        if (name && id && course && date && time) {
+            const table = document.getElementById("attendanceTableBody");
+            const newRow = table.insertRow();
+
+            newRow.insertCell(0).textContent = name;
+            newRow.insertCell(1).textContent = id;
+            newRow.insertCell(2).textContent = course;
+            newRow.insertCell(3).textContent = date;
+            newRow.insertCell(4).textContent = time;
+
+            // Clear localStorage after use
+           
+        }
+    </script>
+</body>
+</html>
