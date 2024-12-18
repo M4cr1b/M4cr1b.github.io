@@ -16,9 +16,9 @@ function checkLocation() {
         navigator.geolocation.getCurrentPosition(function(position) {
             const userLat = position.coords.latitude;
             const userLon = position.coords.longitude;
-            const targetLat = 5.5592846;  // Example latitude of the region center
-            const targetLon = -0.1974306;  // Example longitude of the region center
-            const regionRadius = 0.5;     // Radius in km
+            const targetLat = 5.5961258;  // Example latitude of the region center
+            const targetLon = -0.2238971;  // Example longitude of the region center
+            const regionRadius = 0.01;     // Radius in km
 
             if (!isUserInRegion(userLat, userLon, targetLat, targetLon, regionRadius)) {
                 window.location.href = "result.html"; // Redirect if not in region
