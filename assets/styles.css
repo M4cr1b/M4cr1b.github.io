@@ -59,6 +59,11 @@ h1, h2 {
     .lead {
         font-size: 1rem;
     }
+
+    img {
+        max-width: auto;
+        height: auto;
+    }
 }
 
 @media (max-width: 576px) {
@@ -73,5 +78,10 @@ h1, h2 {
 
     .btn {
         font-size: 0.9rem;
+    }
+
+    img {
+        max-width: auto;
+        height: auto;
     }
 }
