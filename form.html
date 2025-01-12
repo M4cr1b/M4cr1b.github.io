@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Form</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+</head>
+<body class="min-vh-100" style="background-color: #FFFDD0;">
+    <img src="assets/Logo.png" alt="GCTU Logo" class="position-absolute top-0 end-0 p-3" style="max-height: 150px;">
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Attendance Form</h1>
+        <div class="card shadow mx-auto" style="max-width: 500px;">
+            <div class="card-body">
+                <form id="attendanceForm">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Name:</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="id" class="form-label">Student ID:</label>
+                        <input type="text" id="id" name="id" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="course" class="form-label">Course:</label>
+                        <input type="text" id="course" name="course" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date:</label>
+                        <input type="date" id="date" name="date" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="time" class="form-label">Time:</label>
+                        <input type="time" id="time" name="time" class="form-control" required>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-success btn-block">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="assets/app.js"></script>
+    <script>
+        document.getElementById("attendanceForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const id = document.getElementById("id").value;
+  const course = document.getElementById("course").value;
+  const date = document.getElementById("date").value;
+  const time = document.getElementById("time").value;
+
+  // Store values in localStorage
+  localStorage.setItem("name", name);
+  localStorage.setItem("id", id);
+  localStorage.setItem("course", course);
+  localStorage.setItem("date", date);
+  localStorage.setItem("time", time);
+
+  // Redirect to attendance page
+  window.location.href = "attendances.html"; 
+      });
+    </script>
+</body>
+</html>
